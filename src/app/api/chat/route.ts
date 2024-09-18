@@ -11,7 +11,11 @@ export async function POST(request: NextRequest) {
 
     const completion = await client.chat.completions.create({
         model: body.model,
-        messages: body.messages
+        messages: body.messages,
+        temperature: body.temperature,
+        top_p: body.topP,
+        presence_penalty: body.presencePenalty,
+        frequency_penalty: body.frequencyPenalty
     })
 
     console.log(completion);
