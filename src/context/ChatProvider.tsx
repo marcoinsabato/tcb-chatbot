@@ -17,7 +17,13 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
     const [frequencyPenalty, setFrequencyPenalty] = useState(0); // -2 to 2
     const [systemMessage, setSystemMessage] = useState('');
     const [messages , setMessages] = useState([]);
+    const [userPrompt , setUserPrompt] = useState(''); //
 
+
+    const resetChat = () => {
+        setMessages([]);
+        setUserPrompt('');
+    }
     
     return (
         <ChatContext.Provider value={{
@@ -35,6 +41,9 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
             systemMessage,
             setSystemMessage,
             messages,
+            userPrompt,
+            setUserPrompt,
+            resetChat
 
         }}>
             {children}
