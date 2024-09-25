@@ -12,8 +12,14 @@ export default function UploadFileButton() {
     const supabase = createClientComponentClient();
     const router = useRouter();
 
-    const uploadFile = async (event) => {
-        const file = event.target.files[0];
+    const uploadFile = async (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files && event.target.files[0];
+
+        if (!file) {
+            alert('No file selected.');
+            return;
+        }
+
         const bucket = "documents"
     
         // Call Storage API to upload file
