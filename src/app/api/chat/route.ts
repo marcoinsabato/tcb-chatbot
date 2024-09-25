@@ -9,9 +9,14 @@ export async function POST(request: NextRequest) {
         apiKey: process.env.OPENAI_API_KEY,
     });
 
+    const messages = [
+        {role : 'system' , content : body.systemMessage},
+        ...body.messages
+    ]
+
     const completion = await client.chat.completions.create({
         model: body.model,
-        messages: body.messages,
+        messages,
         temperature: body.temperature,
         top_p: body.topP,
         presence_penalty: body.presencePenalty,
