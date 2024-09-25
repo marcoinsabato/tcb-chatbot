@@ -15,3 +15,24 @@
     - `npx shadcn@latest init`
 - Add components
     - `npx shadcn@latest add [component name]`
+
+## Install Prisma ORM
+
+(Prisma Quickstart)[https://www.prisma.io/docs/getting-started/quickstart]
+
+- `npm install typescript ts-node @types/node --save-dev`
+- `npm install prisma --save-dev`
+- `npx prisma init --datasource-provider postgresql`
+- `npm install @prisma/client`
+- add prisma url to `.env`
+
+
+!!! Change database port from 6543 to 5432
+
+## Uplaod Documents to Supabase
+(Upload documents to bucket) [https://www.kirandev.com/upload-files-to-supabase-storage-nextjs]
+
+
+## PGVector Support
+
+(PgVector Guide) [https://supabase.com/blog/openai-embeddings-postgres-vector]

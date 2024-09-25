@@ -9,6 +9,8 @@ import {
     Triangle,
 } from "lucide-react"
 
+import Link from 'next/link'
+
 import { Button } from "@/components/ui/button"
 
 
@@ -31,14 +33,16 @@ export default function Sidebar() {
             <TooltipProvider>
                 <Tooltip>
                 <TooltipTrigger asChild>
-                    <Button
-                    variant="ghost"
-                    size="icon"
-                    className="rounded-lg bg-muted"
-                    aria-label="Playground"
-                    >
-                    <SquareTerminal className="size-5" />
-                    </Button>
+                    <Link href="/">
+                        <Button
+                        variant="ghost"
+                        size="icon"
+                        className="rounded-lg bg-muted"
+                        aria-label="Playground"
+                        >
+                            <SquareTerminal className="size-5" />
+                        </Button>
+                    </Link>
                 </TooltipTrigger>
                 <TooltipContent side="right" sideOffset={5}>
                     Playground
@@ -48,21 +52,23 @@ export default function Sidebar() {
             <TooltipProvider>
                 <Tooltip>
                 <TooltipTrigger asChild>
-                    <Button
-                    variant="ghost"
-                    size="icon"
-                    className="rounded-lg"
-                    aria-label="Models"
-                    >
-                    <Bot className="size-5" />
-                    </Button>
+                    <Link href="/documents">
+                        <Button
+                        variant="ghost"
+                        size="icon"
+                        className="rounded-lg"
+                        aria-label="Models"
+                        >
+                            <Book className="size-5" />
+                        </Button>
+                    </Link>
                 </TooltipTrigger>
                 <TooltipContent side="right" sideOffset={5}>
-                    Models
+                    Documents
                 </TooltipContent>
                 </Tooltip>
             </TooltipProvider>
-            <TooltipProvider>
+            {/* <TooltipProvider>
                 <Tooltip>
                 <TooltipTrigger asChild>
                     <Button
@@ -78,25 +84,8 @@ export default function Sidebar() {
                     API
                 </TooltipContent>
                 </Tooltip>
-            </TooltipProvider>
-            <TooltipProvider>
-                <Tooltip>
-                <TooltipTrigger asChild>
-                    <Button
-                    variant="ghost"
-                    size="icon"
-                    className="rounded-lg"
-                    aria-label="Documentation"
-                    >
-                    <Book className="size-5" />
-                    </Button>
-                </TooltipTrigger>
-                <TooltipContent side="right" sideOffset={5}>
-                    Documentation
-                </TooltipContent>
-                </Tooltip>
-            </TooltipProvider>
-            <TooltipProvider>
+            </TooltipProvider> */}
+            {/* <TooltipProvider>
                 <Tooltip>
                 <TooltipTrigger asChild>
                     <Button
@@ -112,7 +101,7 @@ export default function Sidebar() {
                     Settings
                 </TooltipContent>
                 </Tooltip>
-            </TooltipProvider>
+            </TooltipProvider> */}
             </nav>
             <nav className="mt-auto grid gap-1 p-2">
             <TooltipProvider>
