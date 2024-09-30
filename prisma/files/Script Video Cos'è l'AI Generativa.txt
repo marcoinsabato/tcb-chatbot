@@ -1,0 +1,121 @@
+Benvenuti a questo video corso sull'intelligenza artificiale. 
+
+Oggi esploreremo un argomento affascinante e di grande attualità: l'intelligenza artificiale, o AI.
+[SLIDE 0: Indice degli argomenti]
+In questa lezione introduttiva, parleremo di cos'è l'AI, della sua storia, del suo impatto, dell'AI generativa e delle previsioni future. Iniziamo!
+
+Immaginate di avere un amico non umano capace di risolvere problemi, apprendere nuove informazioni e comunicare con voi in modo naturale. 
+
+Questo amico è l'Intelligenza Artificiale, o AI. 
+
+L'AI è la capacità di una macchina di eseguire compiti che normalmente richiederebbero l'intelligenza umana, come riconoscere immagini, comprendere il linguaggio e prendere decisioni complesse. 
+
+[SLIDE 1: Immagine di un robot amico di un umano. → appare poi la Definizione di Intelligenza Artificiale]
+
+Ma come fanno queste macchine a "pensare"?
+
+[SLIDE 2: far sparire scritta della slide precedente e far apparire la scritta dei dati : Le AI vengono addestrate con grandi quantità di dati. ]
+
+Tutto parte dai dati. 
+
+Le AI vengono addestrate con grandi quantità di informazioni. 
+
+Col tempo, imparano a riconoscere schemi e a fare previsioni, proprio come noi quando impariamo qualcosa di nuovo. 
+
+Un esempio comune è il motore di ricerca che anticipa ciò che stiamo cercando anche se digitiamo solo poche lettere.
+
+[SLIDE 3: Come si dividono le AI, Appare la categoria AI Ristretta (breve descrizione) e Ai Generale (breve descrizione)]
+
+Le AI possono essere suddivise in due categorie principali: AI ristretta e AI generale. 
+
+L'AI ristretta, anche chiamata "debole", è progettata per eseguire un compito specifico, come giocare a scacchi o riconoscere volti in una foto. 
+
+L'AI generale, invece, è un tipo di intelligenza che potrebbe teoricamente eseguire qualsiasi compito intellettuale che un essere umano può fare.
+
+[SLIDE 4: Titolo storia dell’intelligenza artificiale]
+
+Per comprendere meglio l'AI, è utile fare un passo indietro e vedere come tutto è iniziato. La storia dell'AI è ricca di momenti chiave. 
+
+[SLIDE 5: Linea temporale con ciascuna data]
+
+Tutto ebbe inizio nel 1958, quando Frank Rosenblatt sviluppò il Perceptron, il primo neurone artificiale. 
+Questa invenzione fu rivoluzionaria perché creò una rete neurale capace di apprendere e riconoscere pattern.
+
+Nel 1986, l'algoritmo di retropropagazione dell'errore fu introdotto, permettendo alle reti neurali di regolare autonomamente i pesi dei collegamenti tra i neuroni in base ai dati ricevuti. 
+
+Questo fu un passo fondamentale per l'apprendimento autonomo delle AI.
+
+Un altro evento cruciale avvenne nel 1995, con l'introduzione della prima scheda grafica 3D acceleratrice da parte di 3D FX. 
+
+Questo sviluppo fu importante perché l'intelligenza artificiale ha sempre avuto bisogno di enormi quantità di dati e potenza di calcolo. 
+Le schede grafiche hanno permesso l'elaborazione di reti neurali sempre più potenti.
+
+Nel 1997, il campione mondiale di scacchi fu sconfitto da Deep Blue, un algoritmo di intelligenza artificiale. Anche se Deep Blue non utilizzava reti neurali, segnò un punto di svolta nella percezione e nelle capacità dell'AI.
+
+[SLIDE : Titolone : Impatto dell’intelligenza artificiale]
+
+Dopo aver visto le origini e lo sviluppo dell'AI, è importante capire come questa tecnologia stia influenzando la nostra vita quotidiana. 
+
+[SLIDE 10: Immagini che appaiono ogni volta che il coach le cita]
+
+L'AI sta trasformando il modo in cui viviamo e lavoriamo. 
+
+Dalla medicina personalizzata, che può prevedere quali trattamenti funzioneranno meglio per un paziente, alle auto a guida autonoma, che promettono di rendere le nostre strade più sicure, le potenzialità dell'AI sono immense.
+
+
+L'AI è ormai parte integrante delle nostre vite quotidiane. 
+Pensate a quando usiamo il nostro smartphone per chiedere indicazioni stradali o quando i social media ci suggeriscono nuovi amici o contenuti che potrebbero piacerci. 
+
+Tutto questo è possibile grazie agli algoritmi di intelligenza artificiale che analizzano e imparano dai nostri comportamenti.
+
+Ma non è solo questione di comodità. 
+L'AI sta anche rivoluzionando settori come la medicina, l'industria e l'educazione. In medicina, l'AI è utilizzata per analizzare enormi quantità di dati e aiutare i medici a diagnosticare malattie con maggiore precisione e rapidità. 
+
+Nell'industria, le macchine intelligenti ottimizzano i processi produttivi, riducendo sprechi e costi. 
+
+Nell'educazione, l'AI sta trasformando il modo in cui apprendiamo, offrendo esperienze di apprendimento personalizzate che si adattano alle esigenze di ciascuno di noi.
+
+AI Generativa
+[SLIDE 11: Titolone : AI Generativa e AI Generale]
+
+Ora, esploriamo un aspetto specifico dell'AI: l'AI generativa. 
+
+L'AI generativa è un tipo di intelligenza artificiale progettata per creare contenuti nuovi e originali. 
+Utilizzando modelli avanzati, queste AI possono generare testi, immagini, video, audio e molto altro. 
+
+L'AI generativa si concentra sulla creatività e sulla produzione di contenuti.
+
+[SLIDE 12: Slide con blocchi che appaiono ogni volta che il coach ne introduce uno ]
+
+Facciamo degli esempi di AI Generativa.
+
+Per la generazione di testo, strumenti ChatGPT possono scrivere articoli, racconti, e-mail e persino rispondere a domande in modo coerente e informativo. 
+
+Ad esempio, ChatGPT può aiutare a redigere una lettera di presentazione o scrivere un breve racconto su un argomento specifico.
+
+Per la generazione di immagini modelli come MidJourney possono creare immagini a partire da descrizioni testuali. 
+
+Immaginate di descrivere un "gatto che gioca con una palla sotto un albero di Natale" e vedere un'immagine realizzata sulla base di quella descrizione.
+
+L'AI può anche essere utilizzata per creare video. Strumenti avanzati possono prendere uno script scritto e generare un video con personaggi animati che recitano quelle parole, oppure migliorare la qualità di video esistenti.
+
+Per la generazione di audio ci sono algoritmi come quelli utilizzati per  trasformare il testo scritto in discorsi naturali e realistici. 
+
+Ad esempio, si può convertire un articolo di blog in un podcast audio.
+
+L'AI generativa apre nuove possibilità in molti campi, dalla creazione di contenuti personalizzati alla produzione di media su larga scala. Queste tecnologie stanno già rivoluzionando l'industria creativa e continueranno a farlo.
+
+Previsioni sul futuro
+[SLIDE 13: Titolone: Il futuro]
+
+Infine, guardiamo al futuro per capire dove ci sta portando l'AI. Guardando al futuro, ci rendiamo conto che l'intelligenza artificiale è una rivoluzione senza precedenti. Ad esempio, il lancio di ChatGPT ha raggiunto un milione di utenti attivi in appena cinque giorni. Questo è un esempio di come l'AI stia rapidamente diventando parte integrante della nostra vita quotidiana.
+
+[SLIDE 14: grafico di crescita di chat gpt + lista delle previsioni di mercato dell’intelligenza artificiale]
+
+Nel futuro, l'AI potrebbe risolvere problemi complessi come la creazione di nuove terapie o farmaci personalizzati o la creazione di strumenti automatici per fornire educazione a tutti i popoli della terra. 
+
+Le previsioni per il futuro dell'AI sono estremamente promettenti. Siamo solo all'inizio di questa avventura tecnologica, e le possibilità sono infinite. 
+
+Prepariamoci a un mondo dove l'intelligenza artificiale non solo ci assisterà, ma ci aiuterà a realizzare a pieno il nostro potenziale.
+
+Grazie per aver seguito questo video, ora è il momento di iniziare a sperimentare. 

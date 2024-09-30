@@ -4,12 +4,12 @@ import { DiamondPlus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { useRouter } from 'next/navigation';
 
 
+
 export default function UploadFileButton() {
-    const supabase = createClientComponentClient();
+
     const router = useRouter();
 
     const uploadFile = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,41 +20,19 @@ export default function UploadFileButton() {
             return;
         }
 
-        const bucket = "documents"
-    
-        // Call Storage API to upload file
-        const { data, error } = await supabase.storage
-          .from(bucket)
-          .upload(file.name, file);
+        const formData = new FormData();
+        formData.append("file", file);
 
-        // Handle error if upload failed
-        if(error) {
-            alert('Error uploading file.');
-            return;
-        }
 
-        const createDocumentRequest = await fetch('/api/document', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                id: data.id,
-                name: file.name,
-                path: data.path,
-                fullPath: data.fullPath
-            })
+        const response = await fetch("/api/document", {
+            method: "POST",
+            body: formData,
         });
 
-        const createDocumentResponse = await createDocumentRequest.json();
-
-        if(createDocumentResponse.status === 200) {
-
+        if(response.status === 200) {
             router.refresh();
             return;
         }
-
-
     };
 
     return (

@@ -1,5 +1,9 @@
 import UploadFileButton from "@/components/uploadFileButton";
 
+import { TrashIcon } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+
 import {
     Table,
     TableBody,
@@ -10,15 +14,16 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import { useRouter } from 'next/navigation';
+
+import DeleteDocumentButton from "@/components/deleteDocumentButton";
 
 
 import { PrismaClient, Prisma } from '@prisma/client'
 export default async function Documents() {
 
     const prisma = new PrismaClient();
-
     const documents = await prisma.document.findMany();
-
 
     return (
         <div className="flex flex-col">
@@ -35,6 +40,7 @@ export default async function Documents() {
                             <TableHead>ID</TableHead>
                             <TableHead>Name</TableHead>
                             <TableHead>Path</TableHead>
+                            <TableHead></TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -43,12 +49,15 @@ export default async function Documents() {
                             <TableCell className="font-medium">{document.id}</TableCell>
                             <TableCell>{document.name}</TableCell>
                             <TableCell>{document.path}</TableCell>
+                            <TableCell>
+                                <DeleteDocumentButton documentId={document.id} />
+                            </TableCell>
                         </TableRow>
                         ))}
                     </TableBody>
                     <TableFooter>
                         <TableRow>
-                            <TableCell colSpan={2}>Total</TableCell>
+                            <TableCell colSpan={3}>Total</TableCell>
                             <TableCell className="text-right">{documents.length}</TableCell>
                         </TableRow>
                     </TableFooter>
