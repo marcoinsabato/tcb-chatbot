@@ -1,18 +1,16 @@
 import {
     Book,
     Bot,
-    Code2,
     LifeBuoy,
-    Settings2,
     SquareTerminal,
     SquareUser,
     Triangle,
+    BrainCircuit
 } from "lucide-react"
 
 import Link from 'next/link'
 
 import { Button } from "@/components/ui/button"
-
 
 import {
     Tooltip,
@@ -33,7 +31,7 @@ export default function Sidebar() {
             <TooltipProvider>
                 <Tooltip>
                 <TooltipTrigger asChild>
-                    <Link href="/">
+                    <Link href="/playground">
                         <Button
                         variant="ghost"
                         size="icon"
@@ -46,6 +44,44 @@ export default function Sidebar() {
                 </TooltipTrigger>
                 <TooltipContent side="right" sideOffset={5}>
                     Playground
+                </TooltipContent>
+                </Tooltip>
+            </TooltipProvider>
+            <TooltipProvider>
+                <Tooltip>
+                <TooltipTrigger asChild>
+                    <Link href="/rag">
+                        <Button
+                        variant="ghost"
+                        size="icon"
+                        className="rounded-lg bg-muted"
+                        aria-label="Rag"
+                        >
+                            <BrainCircuit className="size-5" />
+                        </Button>
+                    </Link>
+                </TooltipTrigger>
+                <TooltipContent side="right" sideOffset={5}>
+                    RAG
+                </TooltipContent>
+                </Tooltip>
+            </TooltipProvider>
+            <TooltipProvider>
+                <Tooltip>
+                <TooltipTrigger asChild>
+                    <Link href="/playground">
+                        <Button
+                        variant="ghost"
+                        size="icon"
+                        className="rounded-lg bg-muted"
+                        aria-label="Playground"
+                        >
+                            <Bot className="size-5" />
+                        </Button>
+                    </Link>
+                </TooltipTrigger>
+                <TooltipContent side="right" sideOffset={5}>
+                    Agent
                 </TooltipContent>
                 </Tooltip>
             </TooltipProvider>

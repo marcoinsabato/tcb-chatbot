@@ -39,6 +39,7 @@ export default async function Documents() {
                         <TableRow>
                             <TableHead>ID</TableHead>
                             <TableHead>Name</TableHead>
+                            <TableHead>Type</TableHead>
                             <TableHead>Path</TableHead>
                             <TableHead></TableHead>
                         </TableRow>
@@ -48,6 +49,7 @@ export default async function Documents() {
                         <TableRow key={document.id}>
                             <TableCell className="font-medium">{document.id}</TableCell>
                             <TableCell>{document.name}</TableCell>
+                            <TableCell>{document.mimeType}</TableCell>
                             <TableCell>{document.path}</TableCell>
                             <TableCell>
                                 <DeleteDocumentButton documentId={document.id} />
@@ -57,7 +59,7 @@ export default async function Documents() {
                     </TableBody>
                     <TableFooter>
                         <TableRow>
-                            <TableCell colSpan={3}>Total</TableCell>
+                            <TableCell colSpan={4}>Total</TableCell>
                             <TableCell className="text-right">{documents.length}</TableCell>
                         </TableRow>
                     </TableFooter>

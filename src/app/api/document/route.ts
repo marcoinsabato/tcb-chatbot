@@ -35,11 +35,24 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
             name: file.name,
             path: filePath,
             fullPath: filePath,
+            mimeType: file.type
         }
     });
 
     // Read the file content
-    const fileContent = await fs.promises.readFile(filePath, "utf-8");
+    let fileContent = "";
+
+    switch(file.type) {
+        case "application/pdf":
+            // TODO Extract text from PDF file
+            break;
+        case "text/plain":
+            fileContent = await fs.promises.readFile(filePath, "utf-8");
+            break;
+        default:
+
+            break;
+    }
 
     // Split the file content into chunks
     const splitter = new RecursiveCharacterTextSplitter({

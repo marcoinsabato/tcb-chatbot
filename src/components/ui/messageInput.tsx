@@ -18,27 +18,34 @@ import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 
-import { useContext } from "react";
-import { ChatContext } from "@/context/ChatProvider";
 
-export default function MessageInput(){
+export default function MessageInput(
+    {
+        onSubmit,
+        onReset,
+        inputValue,
+        onChange
+    }: {
+    onSubmit: () => void;
+    onReset: () => void;
+    inputValue: string;
+    onChange: (value: string) => void;
+}) {
 
-    const { userPrompt , setUserPrompt , sendMessage , resetChat } = useContext(ChatContext)
-    
     return (
         <form
             className="relative overflow-hidden rounded-lg border bg-background focus-within:ring-1 focus-within:ring-ring" x-chunk="dashboard-03-chunk-1"
-            onSubmit={(e) => {e.preventDefault() ; sendMessage()}}
-            onKeyUp={(e) => e.key === 'Enter' && sendMessage()}
-            onReset={() => resetChat()}
+            onSubmit={(e) => {e.preventDefault() ; onSubmit()}}
+            onKeyUp={(e) => e.key === 'Enter' && onSubmit()}
+            onReset={() => onReset()}
         >
             <Label htmlFor="message" className="sr-only">
             Message
             </Label>
             <Textarea
                 id="message"
-                value={userPrompt}
-                onChange={(e) => setUserPrompt(e.target.value)}
+                value={inputValue}
+                onChange={(e) => onChange(e.target.value)}
                 placeholder="Type your message here..."
                 className="min-h-12 resize-none border-0 p-3 shadow-none focus-visible:ring-0"
             />

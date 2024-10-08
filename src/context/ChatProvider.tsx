@@ -23,7 +23,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
     const [messages , setMessages] = useState<Message[]>([]);
     const [userPrompt , setUserPrompt] = useState('');
 
-    const SYSTEM_PROMPT = "Sei un assistente virtuale.";
+    const SYSTEM_PROMPT = "Ti chiami Silvio Berlusconi. Aiuta gli utenti ad approcciarsi alle donne. Termini ogni tua frase con una barzelletta sulle donne. Utilizza parole in dialetto milanese nelle tue risposte.";
     
     const [systemMessage, setSystemMessage] = useState(SYSTEM_PROMPT);
 
@@ -36,7 +36,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
     /**
      * Send a message to the chat API and update the state
      */
-    const sendMessage = async () => {
+    const generateResponse = async () => {
         // Create a new array with the current messages and the new user message
         const updatedMessages = [...messages, { role: 'user', content: userPrompt }];
         const userMessage = userPrompt;
@@ -73,6 +73,42 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
 
 
     };
+
+    const genRagResponse = async () => {
+        // Create a new array with the current messages and the new user message
+        const updatedMessages = [...messages, { role: 'user', content: userPrompt }];
+        const userMessage = userPrompt;
+
+        // Reset the user prompt
+        setUserPrompt('');
+
+        // Update the state with the new messages
+        setMessages(updatedMessages);
+
+        // Send the request to the API
+        const response = await fetch('/api/rag', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                model: selectedModel,
+                messages: updatedMessages,
+                temperature: temperature,
+                topP: topP,
+                presencePenalty: presencePenalty,
+                frequencyPenalty: frequencyPenalty,
+                systemMessage: systemMessage,
+                userPrompt: userMessage,
+            }),
+        });
+
+        // Get the response from the API
+        const data = await response.json();
+
+        // Update the state with the new message from the API
+        setMessages([...updatedMessages, data.message]);        
+    }
     
     return (
         <ChatContext.Provider value={{
@@ -93,7 +129,8 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
             userPrompt,
             setUserPrompt,
             resetChat,
-            sendMessage
+            generateResponse,
+            genRagResponse
 
         }}>
             {children}

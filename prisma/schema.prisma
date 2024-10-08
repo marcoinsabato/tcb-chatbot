@@ -38,6 +38,7 @@ model Document {
   name        String
   fullPath    String
   path        String
+  mimeType    String
   createdAt   DateTime  @default(now())
 
   embeddings  Embedding[]
