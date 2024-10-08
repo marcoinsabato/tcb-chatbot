@@ -107,7 +107,7 @@ export async function DELETE(request: Request) {
     }
 
     // Delete the document file from the file system
-    fs.rmSync(`.${document?.path}`, { force: true });
+    fs.rmSync(document?.path , { force: true });
 
     // Delete the document from the database
     const deletedDocument = await prisma.document.delete({

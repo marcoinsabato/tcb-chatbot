@@ -23,7 +23,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
     const [messages , setMessages] = useState<Message[]>([]);
     const [userPrompt , setUserPrompt] = useState('');
 
-    const SYSTEM_PROMPT = "Sei un  assistente virtuale che aiuta l'utente ad acquistare. La lista di prodotti e' : Computer da gaming 1200 euro | Computer da lavoro 600 euro | Computer da astronauta 3000 euro. Rispondi in al massimo 20 parole";
+    const SYSTEM_PROMPT = "Sei un assistente virtuale.";
     
     const [systemMessage, setSystemMessage] = useState(SYSTEM_PROMPT);
 
