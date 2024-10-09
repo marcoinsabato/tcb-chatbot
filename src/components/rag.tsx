@@ -13,7 +13,7 @@ export default function Rag() {
     const { userPrompt , setUserPrompt , genRagResponse , resetChat , messages } = useContext(ChatContext);
     
     return (
-        <div className="relative flex h-full min-h-[50vh] flex-col rounded-xl bg-muted/50 p-4 lg:col-span-2">
+        <div className="relative flex h-full min-h-[50vh] flex-col rounded-xl bg-muted/50 p-4 w-full max-w-5xl">
             
             <MessageHistory 
                 messages={messages}
