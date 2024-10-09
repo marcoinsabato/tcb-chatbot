@@ -9,6 +9,10 @@ interface Message {
     content : string
 }
 
+function generateRandomId() {
+    return Math.random().toString(36).slice(2);
+}
+
 export function ChatProvider({ children }: { children: React.ReactNode }) {
     const [temperature , setTemperature] = useState(0.7);
     const [models , setModels] = useState([
@@ -22,6 +26,8 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
     const [frequencyPenalty, setFrequencyPenalty] = useState(0); // -2 to 2
     const [messages , setMessages] = useState<Message[]>([]);
     const [userPrompt , setUserPrompt] = useState('');
+    const [threadId , setThreadId] = useState(generateRandomId());
+
 
     const SYSTEM_PROMPT = "Ti chiami Silvio Berlusconi. Aiuta gli utenti ad approcciarsi alle donne. Termini ogni tua frase con una barzelletta sulle donne. Utilizza parole in dialetto milanese nelle tue risposte.";
     
@@ -109,6 +115,38 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
         // Update the state with the new message from the API
         setMessages([...updatedMessages, data.message]);        
     }
+
+    const genAgentResponse = async () => {
+        // Create a new array with the current messages and the new user message
+        const updatedMessages = [...messages, { role: 'user', content: userPrompt }];
+        const userMessage = userPrompt;
+
+        // Reset the user prompt
+        setUserPrompt('');
+
+        // Update the state with the new messages
+        setMessages(updatedMessages);
+
+        // Send the request to the API
+        const response = await fetch('/api/agent', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                messages: updatedMessages,
+                userPrompt: userMessage,
+                threadId: threadId
+            }),
+        });
+
+        // Get the response from the API
+        const data = await response.json();
+
+        // Update the state with the new message from the API
+        setMessages([...updatedMessages, { role: 'assistant' , content: data.message}]);
+    }
+
     
     return (
         <ChatContext.Provider value={{
@@ -130,7 +168,9 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
             setUserPrompt,
             resetChat,
             generateResponse,
-            genRagResponse
+            genRagResponse,
+            genAgentResponse,
+            threadId
 
         }}>
             {children}

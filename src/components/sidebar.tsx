@@ -69,12 +69,12 @@ export default function Sidebar() {
             <TooltipProvider>
                 <Tooltip>
                 <TooltipTrigger asChild>
-                    <Link href="/playground">
+                    <Link href="/agent">
                         <Button
                         variant="ghost"
                         size="icon"
                         className="rounded-lg bg-muted"
-                        aria-label="Playground"
+                        aria-label="Agent"
                         >
                             <Bot className="size-5" />
                         </Button>

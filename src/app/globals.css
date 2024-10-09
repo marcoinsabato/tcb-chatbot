@@ -52,4 +52,12 @@ body {
   :root {
     --radius: 0.5rem;
   }
+
+  .markdown a {
+    @apply underline;
+  }
+
+  .markdown a:hover {
+    @apply text-blue-500;
+  }
 }
